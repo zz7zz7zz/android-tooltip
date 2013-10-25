@@ -570,8 +570,15 @@ Log.v(TAG,"updateUI status:"+status);
 	{
 		if(null==mChatBallParams)
 		{
+			
+		       /* 
+		        *  params.type = WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;  通知栏处也可见
+		        * 如果设置为params.type = WindowManager.LayoutParams.TYPE_PHONE; 
+		        * 那么优先级会降低一些, 即拉下通知栏不可见 
+		        */  
+		       
 			mChatBallParams=new WindowManager.LayoutParams();
-			mChatBallParams.type=WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;
+			mChatBallParams.type=WindowManager.LayoutParams.TYPE_PHONE;
 			mChatBallParams.format = PixelFormat.RGBA_8888; // 设置图片格式，效果为背景透明
 			mChatBallParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL|WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
 
@@ -591,7 +598,7 @@ Log.v(TAG,"updateUI status:"+status);
 		if(null==mChatUIParams)
 		{
 			mChatUIParams=new WindowManager.LayoutParams();
-			mChatUIParams.type=WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;
+			mChatUIParams.type=WindowManager.LayoutParams.TYPE_PHONE;
 			mChatUIParams.format = PixelFormat.RGBA_8888; // 设置图片格式，效果为背景透明
 			mChatUIParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL;
 			mChatUIParams.width=WindowManager.LayoutParams.MATCH_PARENT;
@@ -610,7 +617,7 @@ Log.v(TAG,"updateUI status:"+status);
 		if(null==mAnimSurfaceViewParams)
 		{
 			mAnimSurfaceViewParams=new WindowManager.LayoutParams();
-			mAnimSurfaceViewParams.type=WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;
+			mAnimSurfaceViewParams.type=WindowManager.LayoutParams.TYPE_PHONE;
 			mAnimSurfaceViewParams.format = PixelFormat.RGBA_8888; // 设置图片格式，效果为背景透明
 			mAnimSurfaceViewParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL|WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
 			mAnimSurfaceViewParams.width=WindowManager.LayoutParams.MATCH_PARENT;
@@ -629,7 +636,7 @@ Log.v(TAG,"updateUI status:"+status);
 		if(null==mMicParams)
 		{
 			mMicParams=new WindowManager.LayoutParams();
-			mMicParams.type=WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;
+			mMicParams.type=WindowManager.LayoutParams.TYPE_PHONE;
 			mMicParams.format = PixelFormat.RGBA_8888; // 设置图片格式，效果为背景透明
 			mMicParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL|WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE;
 			mMicParams.width=context.getResources().getDrawable(R.drawable.tooltip_mic_bottom).getIntrinsicWidth();
