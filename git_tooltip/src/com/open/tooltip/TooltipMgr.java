@@ -467,7 +467,7 @@ Log.v(TAG,"updateUI status:"+status);
 						hideChatBall();
 						hideChatUI();
 						
-						IAnimation anim=ToolTipConfig.isAnimWithShadow?new TransAnimShadow(context, src, des, status, 300, getHeadBitmaps()):new TransAnim(context, src, des, status, 300);
+						IAnimation anim=ToolTipConfig.isAnimWithShadow?new TransAnimShadow(context, src, des, status, 250, getHeadBitmaps()):new TransAnim(context, src, des, status, 300);
 						showAnimView(context, anim);
 					}
 					else
@@ -497,7 +497,7 @@ Log.v(TAG,"updateUI status:"+status);
 						hideChatUI();
 						
 						mChatBall.setImageResource(R.drawable.tooltip_icon_nf);
-						IAnimation anim=ToolTipConfig.isAnimWithShadow?new TransAnimShadow(context, des, src, status, 300, getHeadBitmaps()):new TransAnim(context, des, src, status, 300);
+						IAnimation anim=ToolTipConfig.isAnimWithShadow?new TransAnimShadow(context, des, src, status, 250, getHeadBitmaps()):new TransAnim(context, des, src, status, 300);
 						showAnimView(context, anim);
 					}
 					else
@@ -580,6 +580,8 @@ Log.v(TAG,"updateUI status:"+status);
 			mChatBallParams.gravity=Gravity.LEFT| Gravity.TOP; // 调整悬浮窗口至右侧中间
 			mChatBallParams.x=src[0]-des[0];  
 			mChatBallParams.y=src[1]-des[1];
+			
+			mChatBallParams.softInputMode=WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE;
 		}
 		return mChatBallParams;
 	}
@@ -597,6 +599,8 @@ Log.v(TAG,"updateUI status:"+status);
 			mChatUIParams.gravity=Gravity.LEFT| Gravity.TOP; // 调整悬浮窗口至右侧中间
 			mChatUIParams.x=0;  
 			mChatUIParams.y=0;  
+			
+			mChatUIParams.softInputMode=WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE;
 		}
 		return mChatUIParams;
 	}
@@ -614,6 +618,8 @@ Log.v(TAG,"updateUI status:"+status);
 			mAnimSurfaceViewParams.gravity=Gravity.LEFT| Gravity.TOP; // 调整悬浮窗口至右侧中间
 			mAnimSurfaceViewParams.x=0;  
 			mAnimSurfaceViewParams.y=0; 
+			
+			mAnimSurfaceViewParams.softInputMode=WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE;
 		}
 		return mAnimSurfaceViewParams;
 	}
@@ -630,6 +636,8 @@ Log.v(TAG,"updateUI status:"+status);
 			mMicParams.height=context.getResources().getDrawable(R.drawable.tooltip_mic_bottom).getIntrinsicHeight();
 			mMicParams.x = 0;
 			mMicParams.y = 0;
+			
+			mMicParams.softInputMode=WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE;
 		}
 		return mMicParams;
 	}
