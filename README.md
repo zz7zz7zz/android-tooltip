@@ -6,8 +6,8 @@ android-tooltip
 
 ## 二、效果展示 
 
-![github](http://img.blog.csdn.net/20131025100023937 "附图一") 
-![github](http://img.blog.csdn.net/20131025100037375 "附图二")  
+![github](https://github.com/zz7zz7zz/android-tooltip/blob/master/1.jpg "附图一") 
+![github](https://github.com/zz7zz7zz/android-tooltip/blob/master/2.jpg "附图二")  
 
 
 
